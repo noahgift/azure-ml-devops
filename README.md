@@ -41,7 +41,7 @@ pytest
 * Create a python virtual environment and source it if not created
 
 ```bash
-python3 -m ~/.myrepo
+python3 -m venv ~/.myrepo
 source ~/.myrepo/bin/activate
 ```
 

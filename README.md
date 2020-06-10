@@ -60,7 +60,7 @@ def subtract(x):
 ```
 
 test_hello.py
-```
+```python
 from hello import toyou, add, subtract
 
 
@@ -85,9 +85,35 @@ def test_hello_subtract():
 
 * Run `make all` which will install, lint and test code.
 
-* Setup Github Actions
+* Setup Github Actions in `pythonapp.yml`
 
+```yaml
+name: Python application test with Github Actions
 
+on: [push]
 
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+        make install
+    - name: Lint with pylint
+      run: |
+        make lint
+    - name: Test with pytest
+      run: |
+        make test
+```
+
+* Commit changes and push to Github
 
 

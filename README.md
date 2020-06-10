@@ -28,12 +28,14 @@ all: install lint test
 ```
 
   - requirements.txt
-* The requirements.txt should include:
+  
+The requirements.txt should include:
 
 ```bash
 pylint
 pytest
 ```
+
 * Create a python virtual environment and source it if not created
 
 ```bash
@@ -41,7 +43,49 @@ python3 -m ~/.myrepo
 source ~/.myrepo/bin/activate
 ```
 
-* Run `make all` which will install
+* Create initial `hello.py` and `test_hello.py`
+
+hello.py
+```python
+def toyou(x):
+    return f"hi {x}"
+
+
+def add(x):
+    return x + 1
+
+
+def subtract(x):
+    return x - 1
+```
+
+test_hello.py
+```
+from hello import toyou, add, subtract
+
+
+def setup_function(function):
+    print(f" Running Setup: {function.__name__}")
+    function.x = 10
+
+
+def teardown_function(function):
+    print(f" Running Teardown: {function.__name__}")
+    del function.x
+
+
+### Run to see failed test
+#def test_hello_add():
+#    assert add(test_hello_add.x) == 12
+
+def test_hello_subtract():
+    assert subtract(test_hello_subtract.x) == 9
+```
+
+
+* Run `make all` which will install, lint and test code.
+
+* Setup Github Actions
 
 
 

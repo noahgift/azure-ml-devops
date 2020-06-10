@@ -116,4 +116,16 @@ jobs:
 
 * Commit changes and push to Github
 
+* Verify Github Actions Test Software
+
+* Run project in Azure Shell
+
+* Push container to Azure Registery
+
+* Setup Azure Pipelines
+
+* Setup Kubernetes Cluster
+
+* Deploy to Kubernetes
+
 

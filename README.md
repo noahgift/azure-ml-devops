@@ -3,6 +3,9 @@
 # azure-ml-devops
 Azure DevOps workflow for ML
 
+[![Workflow](https://img.youtube.com/vi/rXXtJpcVems/0.jpg)](https://www.youtube.com/watch?v=rXXtJpcVems)
+
+
 ## Steps to run this project
 
 * Create a Github Repo (if not created)

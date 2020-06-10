@@ -99,10 +99,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.8
+    - name: Set up Python 3.5
       uses: actions/setup-python@v1
       with:
-        python-version: 3.8
+        python-version: 3.5
     - name: Install dependencies
       run: |
         make install

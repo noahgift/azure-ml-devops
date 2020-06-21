@@ -53,7 +53,7 @@ source ~/.myrepo/bin/activate
 hello.py
 ```python
 def toyou(x):
-    return f"hi {x}"
+    return "hi %s" % x
 
 
 def add(x):
@@ -70,12 +70,12 @@ from hello import toyou, add, subtract
 
 
 def setup_function(function):
-    print(f" Running Setup: {function.__name__}")
+    print("Running Setup: %s" % {function.__name__})
     function.x = 10
 
 
 def teardown_function(function):
-    print(f" Running Teardown: {function.__name__}")
+    print("Running Teardown: %s" % {function.__name__})
     del function.x
 
 
@@ -85,6 +85,7 @@ def teardown_function(function):
 
 def test_hello_subtract():
     assert subtract(test_hello_subtract.x) == 9
+
 ```
 
 
